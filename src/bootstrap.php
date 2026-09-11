@@ -2,11 +2,14 @@
 
 declare(strict_types=1);
 
+use Framework\Template\PlatesRender;
 use GuzzleHttp\Psr7\ServerRequest;
 use HttpSoft\Emitter\SapiEmitter;
 use League\Route\Router;
 use App\Controllers\HomeController;
 use App\Controllers\ProductsController;
+use Framework\Template\Render;
+use Framework\Template\RenderInterface;
 use GuzzleHttp\Psr7\HttpFactory;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Psr\Http\Message\ResponseFactoryInterface;
@@ -21,7 +24,8 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 $request = ServerRequest::fromGlobals();
 
 $container = new DI\Container([
-    ResponseFactoryInterface::class => DI\create(HttpFactory::class)
+    ResponseFactoryInterface::class => DI\create(HttpFactory::class),
+    RenderInterface::class  => DI\create(PlatesRender::class)
 ]);
 
 $router = new Router();
