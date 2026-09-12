@@ -23,10 +23,15 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 $request = ServerRequest::fromGlobals();
 
-$container = new DI\Container([
+$builder = new DI\ContainerBuilder;
+
+$builder->addDefinitions([
     ResponseFactoryInterface::class => DI\create(HttpFactory::class),
     RenderInterface::class  => DI\create(PlatesRender::class)
 ]);
+
+$builder->useAttributes(true);
+$container = $builder->build();
 
 $router = new Router();
 
