@@ -23,4 +23,10 @@ abstract class AbstractController{
         
         return $response;
     }
+    public function redirect(string $path):ResponseInterface
+    {
+        $response = $this->factory->createResponse(302);
+        $response = $response->withHeader("Location",$path);
+        return $response;
+    }
 }
