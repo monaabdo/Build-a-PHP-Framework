@@ -9,7 +9,8 @@
         "php-di/php-di": "^7.1",
         "league/plates": "^3.6",
         "doctrine/orm": "^2.20",
-        "symfony/cache": "^6.0"
+        "symfony/cache": "^6.0",
+        "vlucas/phpdotenv": "^5.7"
     },
     "autoload": {
         "psr-4": {

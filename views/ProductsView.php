@@ -1,7 +1,10 @@
 <?php $this->layout("layout",["title"=>"Products"]) ?>
 <h1>List of products</h1>
-<a href="/product/new" class="button">Add New Product</a>
+<p>
+    <a href="/">Home </a> |
+    <a href="/product/new">Add New Product</a>
 
+</p>
 <table>
     <tr>
         <th>ID</th>

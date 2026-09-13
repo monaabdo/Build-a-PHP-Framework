@@ -1,5 +1,10 @@
 <?php $this->layout("layout",['title' => ' Add New Product']) ?>
 <h1> ADD New Product</h1>
+<p>
+    <a href="/">Home </a> |
+    <a href="/products">Products List</a>
+
+</p>
 <form action="/product/store" method="post">
     <div>
         <label for="name">Product Name </label>
